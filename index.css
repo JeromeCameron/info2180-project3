@@ -1,0 +1,50 @@
+#banner{
+    background-color: black;
+    font-size: 10px;
+    text-align: left;
+    color: whitesmoke;
+    padding: .1px 10px .1px 10px;
+    margin-bottom: 10px;
+}
+
+a:link, a:visited{
+    text-decoration: none;
+    color:black;
+    font-size: 14px;
+}
+
+#navigation{
+    background-color: lightgray;
+}
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(6,250px);
+    grid-auto-rows: repeat(8,300px);
+    grid-column-gap: 10px;
+}
+
+#main{
+    grid-column: 2/6;
+    grid-row: 2/8;
+    margin: 0px;
+}
+
+#banner{
+    grid-column: 1/6;
+    grid-row: 1/2;
+    margin-bottom: 0px;
+}
+
+#navigation{
+    grid-column: 1/2;
+    grid-row: 2/8;
+    padding-bottom: 450px;
+    padding-top: 30px;
+}
+
+/*.flex-container{*/
+/*    display:flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
