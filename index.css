@@ -48,3 +48,13 @@ a:link, a:visited{
 /*    align-items: center;*/
 /*    justify-content: center;*/
 /*}*/
+
+iframe{ 
+    outline: none;
+    width: 300px;
+    height: 400px;
+}
+
+iframe[seamless] { 
+    display: block;
+}
