@@ -1,0 +1,39 @@
+#main{
+    padding-left: 20px;
+}
+
+h1{
+    font-family: Impact, Charcoal, sans-serif;
+    font-weight: lighter;
+    font-size: 30px;
+}
+
+label, input[placeholder]{
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    font-style: italic;
+}
+
+label{
+    font-weight: bold;
+}
+
+input{
+    border-radius: 3px;
+    padding: 5px 300px 5px 5px;
+    text-align: left;
+    border-width: 1.5px;
+    margin-bottom: 15px;
+    margin-top: 8px;
+    
+}
+
+button{
+    border-radius: 5px;
+    padding: 5px 40px;
+    background-color: #20B2AA;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    border-style: solid;
+    cursor: pointer;
+}

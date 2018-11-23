@@ -58,3 +58,8 @@ iframe{
 iframe[seamless] { 
     display: block;
 }
+
+img{
+    height: 30px;
+    width: 30px;
+}
