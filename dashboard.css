@@ -39,12 +39,23 @@ button{
 }
 
 th{
-    background-color: #eef1f2;
+    background-color: #49C4AF;
     width: 200px;
     padding: 5px;
     text-align: center;
+    color: white;
+    font-style: oblique;
 }
 
 table{
     padding-bottom: 30px;
+}
+
+td{
+    border-bottom: 1px solid #C0C0C0;
+    padding: 12px;
+    font-size: 12px;
+}
+tr:hover{
+    background-color: #EEEEEE;
 }

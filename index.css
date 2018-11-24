@@ -22,8 +22,8 @@ a:link, a:visited{
     grid-template-columns: repeat(6,250px);
     grid-auto-rows: repeat(8,300px);
     grid-column-gap: 10px;
-    margin: auto;
-    width:70%;
+    /*margin: auto;*/
+    /*width:70%;*/
 }
 
 #main{
