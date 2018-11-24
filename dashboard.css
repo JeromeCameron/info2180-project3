@@ -1,3 +1,7 @@
+#main{
+    padding-left: 20px;
+}
+
 h1{
     font-family: Impact, Charcoal, sans-serif;
     font-weight: lighter;
@@ -20,8 +24,16 @@ button{
     cursor: pointer;
 }
 
-.container{
-  display: flex;
-  
+#top{
+    display: flex;
+    flex-direction: row;
+    justify-content:  space-between;
+    align-items: center;
+    height: 40px;
+    padding-bottom: 20px;
+    padding-top:10px;
 }
 
+#openJobs{
+    padding-bottom: 20px;
+}
