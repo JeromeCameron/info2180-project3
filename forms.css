@@ -1,3 +1,6 @@
+
+/*Style sheet for addJob.html and addUser.html*/
+
 #main{
     padding-left: 20px;
 }
@@ -36,4 +39,8 @@ button{
     font-family: "Courier New", Courier, monospace;
     border-style: solid;
     cursor: pointer;
+}
+
+#jobInfo{
+    padding-bottom: 70px;
 }
