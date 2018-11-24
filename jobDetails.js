@@ -3,8 +3,8 @@
 window.onload = function(){
             
         let httpRequest;
-        let addJob = document.getElementById("post-job").addEventListener("click", function(){
-            window.open("addJob.html","iframe_a");
+        let applyJob = document.getElementById("apply-job").addEventListener("click", function(){
+            
         })
         
         makeRequest()

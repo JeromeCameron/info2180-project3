@@ -23,7 +23,7 @@ echo '</tr>';
 foreach ($results as $row) {
   echo '<tr>';
   echo '<td>' . $row['company_name'] . '</td>';
-  echo '<td>' . $row['job_title'] . '</td>';
+  echo '<td>' . '<a href = "jobDetails.html">' . $row['job_title'] . '</a>' . '</td>';
   echo '<td>' . $row['category'] . '</td>';
   echo '<td>' . $row['date_posted'] . '</td>';
   echo '</tr>';
@@ -49,7 +49,7 @@ echo '</tr>';
 foreach ($results as $row) {
   echo '<tr>';
   echo '<td>' . $row['company_name'] . '</td>';
-  echo '<td>' . $row['job_title'] . '</td>';
+  echo '<td>' . '<a href = "jobDetails.html">' . $row['job_title'] . '</a>' . '</td>';
   echo '<td>' . $row['category'] . '</td>';
   echo '<td>' . $row['date_applied'] . '</td>';
   echo '</tr>';

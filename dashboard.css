@@ -59,3 +59,8 @@ td{
 tr:hover{
     background-color: #EEEEEE;
 }
+
+a:link, a:visited{
+    text-decoration: none;
+    color: blue;
+}
