@@ -37,3 +37,14 @@ button{
 #openJobs{
     padding-bottom: 20px;
 }
+
+th{
+    background-color: #eef1f2;
+    width: 200px;
+    padding: 5px;
+    text-align: center;
+}
+
+table{
+    padding-bottom: 30px;
+}
