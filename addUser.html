@@ -12,23 +12,23 @@
         <div id = "main">
              <h1>New User</h1>
         
-            <form id="userForm">
+            <form id="userForm" action = addUser.php method = "post">
                 <label class = "formElements" for="firstname">First Name</label><br>
-                <input class = "formElements" id="firstname" type="text" placeholder = "First Name"/><br>
+                <input class = "formElements" id="firstname" name = "firstname" type="text" placeholder = "First Name"/><br>
             
                 <label class = "formElements" for="lastname">Last Name</label><br>
-                <input class = "formElements" id="lastname" type="text" placeholder = "Last Name"/><br>
+                <input class = "formElements" id="lastname" name = "lastname" type="text" placeholder = "Last Name"/><br>
                 
                 <label class = "formElements" for="password">Password</label><br>
-                <input class = "formElements" id="password" type="text" placeholder = "Password"/><br>
+                <input class = "formElements" id="password" name = "password" type="text" placeholder = "Password"/><br>
                 
                 <label class = "formElements" for="email">Email</label><br>
-                <input class = "formElements" id="email" type="text" placeholder = "Email"/><br>
+                <input class = "formElements" id="email" name = "email" type="text" placeholder = "Email"/><br>
                 
                 <label class = "formElements" for="telephone">Telephone</label><br>
-                <input class = "formElements" id="telephone" type="text" placeholder = "Telephone"/><br>
+                <input class = "formElements" id="telephone" name = "telephone" type="text" placeholder = "Telephone"/><br>
                 
-                <button type="button">Submit</button>
+                <input id = "button" type= "submit" name = "sunmit" value = "submit"> </input>
                 
             </form>
         </div>
