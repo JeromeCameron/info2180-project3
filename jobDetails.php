@@ -13,7 +13,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($results as $row) {
     echo '<h1>' . $row['job_title'] . '</h1>';
-    echo '<p>' . $row['date_posted'] . '</p>';
+    echo '<p>' ."Posted " . $row['date_posted'] . '</p>';
     echo '<p>' . $row['category'] . '</p>';
     echo '<h3>' . $row['company_name'] . '</h3>';
     echo '<h3>' . $row['company_location'] . '</h3>';

@@ -15,19 +15,20 @@ echo '<h2>Available Jobs</h2>';
 echo '<table>';
 
 echo '<tr>';
-echo '<th class = "hide">'. "ID" . '</th>';
 echo '<th>'. "Company" . '</th>';
 echo '<th>'. "Job Title" . '</th>';
 echo '<th>'. "Category" . '</th>';
 echo '<th>'. "Date" . '</th>';
+echo '<th class = "hide">'. "ID" . '</th>';
 echo '</tr>';
+
 foreach ($results as $row) {
   echo '<tr>';
-  echo '<td class = "hide">' . $row['id'] . '</td>';
   echo '<td>' . $row['company_name'] . '</td>';
   echo '<td>' . '<a href = "jobDetails.html">' . $row['job_title'] . '</a>' . '</td>';
   echo '<td>' . $row['category'] . '</td>';
   echo '<td>' . $row['date_posted'] . '</td>';
+  echo '<td class = "hide">' . $row['id'] . '</td>';
   echo '</tr>';
 }
 
@@ -43,19 +44,20 @@ echo '<h2>Jobs Applied For</h2>';
 echo '<table>';
 
 echo '<tr>';
-echo '<th class = "hide">'. "ID" . '</th>';
 echo '<th>'. "Company" . '</th>';
 echo '<th>'. "Job Title" . '</th>';
 echo '<th>'. "Category" . '</th>';
 echo '<th>'. "Date" . '</th>';
+echo '<th class = "hide">'. "ID" . '</th>';
 echo '</tr>';
+
 foreach ($results as $row) {
   echo '<tr>';
-  echo '<td class = "hide">' . $row['id'] . '</td>';
   echo '<td>' . $row['company_name'] . '</td>';
   echo '<td>' . '<a href = "jobDetails.html">' . $row['job_title'] . '</a>' . '</td>';
   echo '<td>' . $row['category'] . '</td>';
   echo '<td>' . $row['date_applied'] . '</td>';
+  echo '<td class = "hide">' . $row['id'] . '</td>';
   echo '</tr>';
 }
 

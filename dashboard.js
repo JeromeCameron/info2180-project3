@@ -1,15 +1,14 @@
 // JavaScript File
 
 $( document ).ready(function(){
-
-        let hideMe = $(document.getElementsByClassName("hide")).hide();
     
-        let httpRequest;
-        let addJob = document.getElementById("post-job").addEventListener("click", function(){
-            window.open("addJob.html","iframe_a");
-        })
+        $("#post-job").click(function(){
+             window.open("addJob.html","iframe_a");
+        });
         
-        makeRequest()
+        let httpRequest;
+        
+        makeRequest();
         
         function makeRequest(){
             httpRequest = new XMLHttpRequest();

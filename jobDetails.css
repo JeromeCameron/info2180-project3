@@ -1,0 +1,45 @@
+#main{
+    padding-left: 20px;
+}
+
+h1{
+    font-family: Impact, Charcoal, sans-serif;
+    font-weight: lighter;
+    font-size: 30px;
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+}
+
+h2{
+    font-family: Impact, Charcoal, sans-serif;
+    font-weight: lighter;
+    font-size: 20px;
+}
+
+h3:nth-of-type(1){
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h3:nth-of-type(2){
+    padding-top: 0px;
+    margin-top: 2px;
+    padding-bottom: 10px;
+}
+button{
+    border-radius: 5px;
+    padding: 10px 30px;
+    background-color: #589D47;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    border-style: solid;
+    cursor: pointer;
+    float: right;
+}
+
+p:nth-of-type(1), p:nth-of-type(2){
+    color: grey;
+    font-size: 13px;
+    padding: 1px;
+    margin: 0px;
+}

@@ -64,3 +64,11 @@ a:link, a:visited{
     text-decoration: none;
     color: blue;
 }
+
+td:nth-of-type(5){
+    display: none;
+}
+
+th + th + th + th + th{
+    display: none;
+}
