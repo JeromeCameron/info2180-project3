@@ -1,7 +1,9 @@
 // JavaScript File
 
-window.onload = function(){
-            
+$( document ).ready(function(){
+
+        let hideMe = $(document.getElementsByClassName("hide")).hide();
+    
         let httpRequest;
         let addJob = document.getElementById("post-job").addEventListener("click", function(){
             window.open("addJob.html","iframe_a");
@@ -25,4 +27,4 @@ window.onload = function(){
                 }
             }
         }
-};
+})
