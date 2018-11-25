@@ -21,7 +21,7 @@ label{
     font-weight: bold;
 }
 
-input{
+input, #jobInfo{
     border-radius: 3px;
     padding: 5px 300px 5px 5px;
     text-align: left;
@@ -41,6 +41,8 @@ input{
     cursor: pointer;
 }
 
-#jobInfo{
-    padding-bottom: 70px;
-}
+/*#jobInfo{*/
+    /*padding-bottom: 70px;*/
+/*    height: 70px;*/
+/*    width: 70px;*/
+/*}*/
