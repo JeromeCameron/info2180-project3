@@ -1,38 +1,53 @@
 <?php
 
-$host = getenv('IP');
-$username = getenv('C9_USER');
-$password = '';
-$dbname = 'hireme';
+session_start();
 
-$conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    
-    $stmt = $conn->prepare("INSERT INTO jobs(job_title,job_description,category,company_name,company_location,date_posted) 
-    VALUES(:title,:jobInfo,:category,:company,:location,:ddate)");
-    
-    $stmt->bindParam(':title', $title);
-    $stmt->bindParam(':jobInfo', $jobInfo);
-    $stmt->bindParam(':category', $category);
-    $stmt->bindParam(':company', $company);
-    $stmt->bindParam(':location', $location);
-    $stmt->bindParam(':ddate', $ddate);
-    
-    $title = clean_input($_POST['title']);
-    $jobInfo = clean_input($_POST['jobInfo']);
-    $category = clean_input($_POST['category']);
-    $company = clean_input($_POST['company']);
-    $location = clean_input($_POST['location']);
-    $ddate = date("Y-m-d");
-    $stmt->execute();
-}
-
-function clean_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlentities($data);
-  return $data;
-}
+$key = hash("sha512", microtime());
+$_SESSION['token'] = $key;
 
 ?>
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Add Job</title>
+         <link href="forms.css" type="text/css" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="addJob.js" type="text/javascript"></script>
+    </head>
+    <body>
+        
+        <div id = "main">
+             <h1>New Job</h1>
+        
+            <form id="jobForm" action = "addJobProcess.php" method = "post">
+                
+                <input id = "token" type = "hidden" name = "token" value = "<?php echo $key; ?>" />
+                
+                <label class = "formElements" for="jobTitle">Job Title</label><br>
+                <input class = "formElements" id="jobTitle" name = "title" type="text" placeholder = "e.g product manager" required /><br>
+            
+                <label class = "formElements" for="jobInfo">Job Description</label><br>
+                <textarea class = "formElements" id="jobInfo" rows="5" cols="50" name="jobInfo" form="jobForm" required ></textarea><br>
+                
+                <label class = "formElements" for="category">Category</label><br>
+                <input class = "formElements" id="category" name = "category" type="text" placeholder = "Graphic Design" required /><br>
+                
+                <label class = "formElements" for="company">Company</label><br>
+                <input class = "formElements" id="company" name = "company" type="text" placeholder = "Google Inc." required /><br>
+                
+                <label class = "formElements" for="location">Job Location</label><br>
+                <input class = "formElements" id="location" name = "location" type="text" placeholder = "e.g Kingston, Jamaica"required /><br>
+                
+               <input id = "button" type= "submit" name = "submit" value = "submit"> </input><br>
+               
+               <div id = "message"></div>
+                
+            </form>
+        </div>
+       
+    </body>
+    
+</html>
+

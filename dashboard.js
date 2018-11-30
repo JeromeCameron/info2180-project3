@@ -3,7 +3,7 @@
 $( document ).ready(function(){
     
         $("#post-job").click(function(){
-             window.open("addJob.html","iframe_a");
+             window.open("addJob.php","iframe_a");
         });
         
         let httpRequest;
