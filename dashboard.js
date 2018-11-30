@@ -1,5 +1,5 @@
 // JavaScript File
-
+/* global $ */
 $( document ).ready(function(){
     
         $("#post-job").click(function(){
