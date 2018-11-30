@@ -7,16 +7,13 @@ $username = getenv('C9_USER');
 $password = '';
 $dbname = 'hireme';
 
-// !isset($_SESSION['token']) || 
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
   
-  if($_SESSION['token'] !== $_POST['token']){
+  if(!isset($_SESSION['token']) || $_SESSION['token'] !== $_POST['token']){
       echo "<p>hack detected</p>";
-      echo $_SESSION['token'];
-      echo $_POST['token'];
   }else{
     
     $stmt = $conn->prepare("INSERT INTO jobs(job_title,job_description,category,company_name,company_location,date_posted) 

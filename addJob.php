@@ -26,7 +26,7 @@ $_SESSION['token'] = $key;
                 <input id = "token" type = "hidden" name = "token" value = "<?php echo $key; ?>" />
                 
                 <label class = "formElements" for="jobTitle">Job Title</label><br>
-                <input class = "formElements" id="jobTitle" name = "title" type="text" placeholder = "e.g product manager" required /><br>
+                <input class = "formElements" id="jobTitle" name = "title" type="text" placeholder = "e.g product manager" required><br>
             
                 <label class = "formElements" for="jobInfo">Job Description</label><br>
                 <textarea class = "formElements" id="jobInfo" rows="5" cols="50" name="jobInfo" form="jobForm" required ></textarea><br>
@@ -38,9 +38,9 @@ $_SESSION['token'] = $key;
                 <input class = "formElements" id="company" name = "company" type="text" placeholder = "Google Inc." required /><br>
                 
                 <label class = "formElements" for="location">Job Location</label><br>
-                <input class = "formElements" id="location" name = "location" type="text" placeholder = "e.g Kingston, Jamaica"required /><br>
+                <input class = "formElements" id="location" name = "location" type="text" placeholder = "e.g Kingston, Jamaica" required /><br>
                 
-               <input id = "button" type= "submit" name = "submit" value = "submit"> </input><br>
+               <input id = "button" type= "submit" name = "submit" value = "submit"><br>
                
                <div id = "message"></div>
                 

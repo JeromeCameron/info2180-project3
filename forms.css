@@ -46,3 +46,8 @@ input, #jobInfo{
 /*    height: 70px;*/
 /*    width: 70px;*/
 /*}*/
+
+#message{
+    font-size: 10px;
+    font-family: sans-serif;
+}
