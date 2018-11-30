@@ -14,8 +14,6 @@
       if(!isset($_SESSION['token']) || $_SESSION['token'] !== $_POST['token']){
           echo "<p>hack detected</p>";
       }else{
-        
-        if ($_SERVER["REQUEST_METHOD"] == "POST"){
           
           $stmt = $conn->prepare("INSERT INTO users(firstname,lastname,password,telephone,email,date_joined) 
           VALUES(:firstname,:lastname,:password,:telephone,:email,:ddate)");
@@ -28,13 +26,13 @@
           
           $firstname = clean_input($_POST['firstname']);
           $lastname = clean_input($_POST['lastname']);
-          $password = clean_input($_POST['password']);
+          $password = password_hash(clean_input($_POST['password']),PASSWORD_DEFAULT);
           $telephone = clean_input($_POST['telephone']);
           $email = clean_input($_POST['email']);
           $ddate = date("Y-m-d");
           $stmt->execute();
           echo "<p>New user details successfully added!</p>";
-      }
+      
     }
   }
   

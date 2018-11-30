@@ -8,22 +8,26 @@ window.onload = function(){
             event.preventDefault();
             
             
-            let title = document.getElementById("jobTitle").value;
+            let title = document.getElementById("jobTitle");
             let jobInfo = document.getElementById("jobInfo").value; 
             let category = document.getElementById("category").value; 
             let company = document.getElementById("company").value; 
             let location = document.getElementById("location").value;
             let token = document.getElementById("token").getAttribute("value");
+            let name;
             
-            let data = {title: title, jobInfo: jobInfo, category: category, company: company, location: location, token: token};
+            //Code to test all data for validity goes here
+            
+            let data = {title: title.value, jobInfo: jobInfo, category: category, company: company, location: location, token: token};
           
             prepData();
-        
+          
+            
             function prepData(){
                 httpRequest = new XMLHttpRequest();
                 let encodedData = "";
                 let encodedDataPairs = [];
-                let name;
+                
                 
                 for(name in data) {
                     encodedDataPairs.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));

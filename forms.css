@@ -51,3 +51,7 @@ input, #jobInfo{
     font-size: 10px;
     font-family: sans-serif;
 }
+
+.invalid{
+    background-color: #f99d9b;
+}
