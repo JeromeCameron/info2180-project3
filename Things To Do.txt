@@ -1,0 +1,10 @@
+Things to Do
+
+1. Finish login page
+    a. Passwords should have at least one number and one letter, one capital letter and at least 8 characters long. This also applies to Userform
+    b. Must be hashed.
+2. Code to apply for a job
+3. New indicator beside recent jobs
+4. Client side validation
+5. Check Server side validation
+6. 

@@ -47,9 +47,11 @@ input, #jobInfo{
 /*    width: 70px;*/
 /*}*/
 
-#message{
+#message, .message{
     font-size: 10px;
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .invalid{
