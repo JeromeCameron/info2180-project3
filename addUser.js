@@ -4,7 +4,7 @@
 $(document).ready(function(){
             
         let httpRequest;
-        let numExp = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/;
+        let numExp = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/; //password regular expression
         
         let button = document.getElementById("button").addEventListener("click", function(event){
             event.preventDefault();
