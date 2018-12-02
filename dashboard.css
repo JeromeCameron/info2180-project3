@@ -49,6 +49,7 @@ th{
 
 table{
     padding-bottom: 30px;
+    border-collapse: collapse;
 }
 
 td{

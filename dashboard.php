@@ -54,7 +54,7 @@ echo '</tr>';
 foreach ($results as $row) {
   echo '<tr>';
   echo '<td>' . $row['company_name'] . '</td>';
-  echo '<td>' . '<a href = "jobDetails.html">' . $row['job_title'] . '</a>' . '</td>';
+  echo '<td>' . '<a href = "jobDetails.html" target="iframe_a">' . $row['job_title'] . '</a>' . '</td>';
   echo '<td>' . $row['category'] . '</td>';
   echo '<td>' . $row['date_applied'] . '</td>';
   echo '<td class = "hide">' . $row['id'] . '</td>';

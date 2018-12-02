@@ -19,5 +19,6 @@ foreach ($results as $row) {
     echo '<h3>' . $row['company_location'] . '</h3>';
     echo '<h2>' . "Job Description". '</h2>';
     echo '<p>' . $row['job_description'] . '</p>';
+    echo '<p id = "job_id">' . $row['id'] . '</p>';
 }
 ?>
