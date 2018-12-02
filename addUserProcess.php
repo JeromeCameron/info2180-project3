@@ -26,16 +26,35 @@
           
           $firstname = clean_input($_POST['firstname']);
           $lastname = clean_input($_POST['lastname']);
-          $password = password_hash(clean_input($_POST['password']),PASSWORD_DEFAULT);
+          $password = clean_input($_POST['password']);
           $telephone = clean_input($_POST['telephone']);
           $email = clean_input($_POST['email']);
           $ddate = date("Y-m-d");
-          $stmt->execute();
-          echo "<p>New user details successfully added!</p>";
-      
+          
+          switch(true){
+            
+            case (!preg_match("/(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/", $password)):
+              echo "<p>Password is not valid!</p>"; //error message sent to form
+              break;
+              
+            case (!preg_match("/^\d{3}-\d{3}-\d{4}$/", $telephone)):
+              echo "<p>Telephone # is not valid! Format must be for eg 876-555-7896</p>"; //error message sent to form
+              break;
+            
+            case (!filter_var($email, FILTER_VALIDATE_EMAIL)):
+              echo "<p>Email is not valid!</p>"; //error message sent to form
+              break;
+            
+            default:
+              $password = password_hash(clean_input($_POST['password']),PASSWORD_DEFAULT);
+              $stmt->execute();
+              echo "<p>New user details successfully added!</p>"; //success message sent to form 
+          }
+  
     }
   }
   
+  //santitize all data inputs from form
   function clean_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
