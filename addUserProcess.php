@@ -1,4 +1,6 @@
 <?php
+
+  //PHP file santitize and validates data submitted before sending to database.
   
   session_start();
   
@@ -7,10 +9,13 @@
   $password = '';
   $dbname = 'hireme';
   
+  //connection
   $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
   
+  //checks if valid POST request method to combat CSRF attacks
   if ($_SERVER["REQUEST_METHOD"] == "POST"){
   
+      //checks session token value matches token submitted to combat CSRF attacks
       if(!isset($_SESSION['token']) || $_SESSION['token'] !== $_POST['token']){
           echo "<p>hack detected</p>";
       }else{

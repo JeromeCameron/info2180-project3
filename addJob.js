@@ -1,4 +1,5 @@
-// JavaScript File
+// JavaScript File hanldes client side validation and form inputs submission to the hireme database
+/* global $ */
 
 $(document).ready(function(){
             
@@ -6,7 +7,7 @@ $(document).ready(function(){
         
         let button = document.getElementById("button").addEventListener("click", function(event){
             
-            event.preventDefault();
+            event.preventDefault(); //prevent default action of button event
             
             let title = document.getElementById("jobTitle");
             let jobInfo = document.getElementById("jobInfo"); 
@@ -17,8 +18,7 @@ $(document).ready(function(){
             let name;
             let data = {title: title, jobInfo: jobInfo, category: category, company: company, location: location};
             
-            //Code to test all data for validity goes here
-            
+            //checks if valid data
             function testData(){
                 let result = false;
                 

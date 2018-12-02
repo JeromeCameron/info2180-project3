@@ -1,4 +1,7 @@
 <?php
+//pulls jobs from database
+
+session_start();
 
 $host = getenv('IP');
 $username = getenv('C9_USER');
@@ -25,7 +28,7 @@ echo '</tr>';
 foreach ($results as $row) {
   echo '<tr>';
   echo '<td>' . $row['company_name'] . '</td>';
-  echo '<td>' . '<a href = "jobDetails.html">' . $row['job_title'] . '</a>' . '</td>';
+  echo '<td>' . '<a class = "job" href = "jobDetails.html" target="iframe_a" id =' . $row['id'] . '>' . $row['job_title'] . '</a>' . '</td>';
   echo '<td>' . $row['category'] . '</td>';
   echo '<td>' . $row['date_posted'] . '</td>';
   echo '<td class = "hide">' . $row['id'] . '</td>';
@@ -36,7 +39,7 @@ echo'</table>';
 
 //Code for jobs a particular user applied for. Need to set up sessions to pull user ID for where clause
 
-$stmt = $conn->query("SELECT jobs.id, company_name, job_title, category, date_applied FROM jobs JOIN jobsAppliedFor ON jobs.id = jobsAppliedFor.job_id where jobsAppliedFor.user_id = 3");
+$stmt = $conn->query("SELECT jobs.id, company_name, job_title, category, date_applied FROM jobs JOIN jobsAppliedFor ON jobs.id = jobsAppliedFor.job_id where jobsAppliedFor.user_id = 1"); //$_SESSION['user_id']
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -54,7 +57,7 @@ echo '</tr>';
 foreach ($results as $row) {
   echo '<tr>';
   echo '<td>' . $row['company_name'] . '</td>';
-  echo '<td>' . '<a href = "jobDetails.html" target="iframe_a">' . $row['job_title'] . '</a>' . '</td>';
+  echo '<td>' . '<a class = "job" href = "jobDetails.html" target="iframe_a" id =' . $row['id'] . '>' . $row['job_title'] . '</a>' . '</td>';
   echo '<td>' . $row['category'] . '</td>';
   echo '<td>' . $row['date_applied'] . '</td>';
   echo '<td class = "hide">' . $row['id'] . '</td>';
@@ -62,5 +65,8 @@ foreach ($results as $row) {
 }
 
 echo'</table>';
+
+
+//--------------------------------------------------------------------------------------------------------------------------------
 
 ?>

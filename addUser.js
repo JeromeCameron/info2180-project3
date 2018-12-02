@@ -1,6 +1,6 @@
-// JavaScript File
+// JavaScript File to validate and submit form data captured
+/* global $ */
 
-// JavaScript File
 $(document).ready(function(){
             
         let httpRequest;
@@ -21,7 +21,7 @@ $(document).ready(function(){
             let name;
             let data = {firstname: firstname, lastname: lastname, password: password, email: email, telephone: telephone};
             
-            //Code to test all data for validity.
+            //Code to test data for validity.
             function testData(){
                 let result = false;
                 for(name in data) {

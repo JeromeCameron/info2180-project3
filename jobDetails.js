@@ -1,4 +1,4 @@
-// JavaScript File
+// JavaScript File request and sends job details to jobDetails.html page
 window.onload = function(){
             
         let httpRequest;
@@ -8,6 +8,7 @@ window.onload = function(){
         let applyJob = document.getElementById("apply-job").addEventListener("click", function(event){
             
             event.preventDefault();
+            
             let encodedData = "";
             let encodedDataPairs = [];
             let data = {job_id: job_id};

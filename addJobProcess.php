@@ -1,5 +1,7 @@
 <?php
 
+//PHP file sanitize and submits new job data to database.
+
 session_start();
 
 $host = getenv('IP');
@@ -7,11 +9,13 @@ $username = getenv('C9_USER');
 $password = '';
 $dbname = 'hireme';
 
-
+//connection
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
+//checks if valid POST request method to combat CSRF attacks
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
   
+  //checks session token value matches token submitted to combat CSRF attacks
   if(!isset($_SESSION['token']) || $_SESSION['token'] !== $_POST['token']){
       echo "<p>hack detected</p>";
   }else{
@@ -38,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     
 }
 
+// Sanitize form data submitted.
 function clean_input($data) {
   $data = trim($data);
   $data = stripslashes($data);

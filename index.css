@@ -70,3 +70,9 @@ img{
     height: 30px;
     width: 30px;
 }
+
+#frame{
+    width: 900px;
+    height: 700px;
+    display: block;
+}

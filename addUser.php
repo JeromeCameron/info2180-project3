@@ -1,7 +1,10 @@
 <?php
 
+//PHP file loads html form to add new user with som validation using html
+
 session_start();
 
+//implemnts session key
 $key = hash("sha512", microtime());
 $_SESSION['token'] = $key;
 

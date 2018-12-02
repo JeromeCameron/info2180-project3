@@ -1,11 +1,21 @@
 <?php
 
+//PHP file sets up html form for adding new jobs
 session_start();
 
-$key = hash("sha512", microtime());
-$_SESSION['token'] = $key;
+// $_SESSION['userId'] = 1;
+
+// if(!isset($_SESSION['userId'])){
+//     header('Location: index.html');
+// }else{
+//     header('Location: addJob.php');
+// }
+
+// $key = hash("sha512", microtime());
+// $_SESSION['token'] = $key;
 
 ?>
+
 
 <!DOCTYPE html>
 

@@ -1,5 +1,7 @@
 <?php
 
+//PHP file handles job applications
+
 session_start();
 
 $host = getenv('IP');
@@ -7,6 +9,7 @@ $username = getenv('C9_USER');
 $password = '';
 $dbname = 'hireme';
 
+//connection
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
