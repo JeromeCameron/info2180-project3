@@ -5,14 +5,14 @@ $(document).ready(function(){
         let httpRequest;
         
         let button = document.getElementById("button").addEventListener("click", function(event){
+            
             event.preventDefault();
             
-            
             let title = document.getElementById("jobTitle");
-            let jobInfo = document.getElementById("jobInfo").value; 
-            let category = document.getElementById("category").value; 
-            let company = document.getElementById("company").value; 
-            let location = document.getElementById("location").value;
+            let jobInfo = document.getElementById("jobInfo"); 
+            let category = document.getElementById("category"); 
+            let company = document.getElementById("company"); 
+            let location = document.getElementById("location");
             let token = document.getElementById("token").getAttribute("value");
             let name;
             let data = {title: title, jobInfo: jobInfo, category: category, company: company, location: location};
@@ -21,6 +21,7 @@ $(document).ready(function(){
             
             function testData(){
                 let result = false;
+                
                 for(name in data) {
                     if(blankField(data[name])){
                         result = true;
@@ -32,9 +33,10 @@ $(document).ready(function(){
                  return result;
             }
             
+            //Function uses AJAX to send form data to PHP file handling inputs to database
             if(testData()){
                 
-                data = {title: title.value, jobInfo: jobInfo, category: category, company: company, location: location, token: token};
+                data = {title: title.value, jobInfo: jobInfo.value, category: category.value, company: company.value, location: location.value, token: token};
             
                 prepData();
               
@@ -67,9 +69,8 @@ $(document).ready(function(){
                     }
                 }
             }
-                
-            
-            
+              
+            //function checks if any field in the form is balnk and notifies the user by highlighting the field or fields    
             function blankField(ele){
                     if (ele.value === ""){
                         ele.classList.add("invalid");

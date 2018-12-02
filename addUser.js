@@ -5,6 +5,7 @@ $(document).ready(function(){
             
         let httpRequest;
         let numExp = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/; //password regular expression
+        let tele = /^\d{3}-\d{3}-\d{4}$/; //telephone number regular expression
         
         let button = document.getElementById("button").addEventListener("click", function(event){
             event.preventDefault();
@@ -20,8 +21,7 @@ $(document).ready(function(){
             let name;
             let data = {firstname: firstname, lastname: lastname, password: password, email: email, telephone: telephone};
             
-            //Code to test all data for validity goes here
-        
+            //Code to test all data for validity.
             function testData(){
                 let result = false;
                 for(name in data) {
@@ -36,10 +36,17 @@ $(document).ready(function(){
                     password.insertAdjacentHTML('afterend', "<p class = 'message'>Password must contain one number, one letter, one capital letter and be at least 8 characters long</p>");
                     result = false;
                  }
+                 
+                 if(telephone.value === "" || (telephone.value !== "" && !tele.test(telephone.value))){
+                    telephone.classList.add("invalid");
+                    telephone.insertAdjacentHTML('afterend', "<p class = 'message'>Telephone number format must be for eg 876-555-7896</p>");
+                    result = false;
+                 }
                 
                  return result;
             }
-                
+            
+             //Function uses AJAX to send form data to PHP file handling inputs to database    
             if(testData()){
                 
                 data = {firstname: firstname.value, lastname: lastname.value, password: password.value, email: email.value, telephone: telephone.value, token: token};
@@ -73,8 +80,9 @@ $(document).ready(function(){
                         }
                     }
                 }
-            }        
+            } 
             
+             //function checks if any field in the form is balnk and notifies the user by highlighting the field or fields
             function blankField(ele){
                     if (ele.value === ""){
                         ele.classList.add("invalid");
