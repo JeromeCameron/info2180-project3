@@ -1,34 +1,44 @@
 <?php
-ob_start();
-   session_start();
+session_start();   
    
-   $host = getenv('IP');
+$host = getenv('IP');
 $username = getenv('C9_USER');
 $password = '';
 $dbname = 'hireme';
 
+
+$email=$_POST["email"];
+$password = password_hash(clean_input($_POST['password']));
+
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
-$stmt2 = $conn->prepare('SELECT email,password FROM users WHERE name LIKE :country');
-$country = '%' . filter_input(INPUT_GET, 'country', FILTER_SANITIZE_STRING) . '%'; // <-- filter your data first (see [Data Filtering](#data_filtering)), especially important for INSERT, UPDATE, etc.
-$stmt2->bindParam(':country', $country, PDO::PARAM_STR); // <-- Automatically sanitized for SQL by PDO
+//Why not use on query to pull both the password and email...Less lines
+
+$stmt2 = $conn->prepare('SELECT email FROM users WHERE  email :email');
+$email = '%' . filter_input(INPUT_GET, 'email', FILTER_SANITIZE_STRING) . '%'; // <-- filter your data first (see [Data Filtering](#data_filtering)), especially important for INSERT, UPDATE, etc.
+$stmt2->bindParam(':email', $email, PDO::PARAM_STR); // <-- Automatically sanitized for SQL by PDO
 $stmt2->execute();
-$results2 = $stmt2;
+//$stmt2 = $conn->query('SELECT email FROM users ');
+//$stmt = $conn->query('SELECT password FROM users ');
+$stmt = $conn->prepare('SELECT password FROM users WHERE password :password');
+$password = '%' . filter_input(INPUT_GET, 'password', FILTER_SANITIZE_STRING) . '%'; // <-- filter your data first (see [Data Filtering](#data_filtering)), especially important for INSERT, UPDATE, etc.
+$stmt->bindParam(':password', $password, PDO::PARAM_STR); // <-- Automatically sanitized for SQL by PDO
+$stmt->execute();
 
 $msg = '';
             
-            if (isset($_POST['login']) && !empty($_POST['username']) 
-               && !empty($_POST['password'])) {
+            if (!empty($_POST['email'])  && !empty($_POST['password'])) {
 				
-               if ($_POST['username'] == 'tutorialspoint' && 
-                  $_POST['password'] == '1234') {
+               if ($_POST['email'] === $stmt2 && $_POST['password'] == $stmt) {
                   $_SESSION['valid'] = true;
                   $_SESSION['timeout'] = time();
-                  $_SESSION['username'] = 'tutorialspoint';
+                  $_SESSION['username'] = $_POST['email'];
+                  
                   
                   echo 'You have entered valid use name and password';
+                  header("location: index.php");
                }else {
-                  $msg = 'Wrong username or password';
+                  echo $msg = 'Wrong username or password';
                }
             }
 
