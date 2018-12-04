@@ -33,9 +33,10 @@ foreach ($results as $row) {
   echo '<td>' . $row['category'] . '</td>';
   echo '<td>' . $row['date_posted'] . '</td>';
   
-  //$diff = date_diff(date("Y-m-d"), $row['date_posted']);
-  //echo $diff->format("%R%a days");
-  if((date("Y-m-d")-$row['date_posted']) === 0){
+  $date = $row['date_posted'];
+  list($year,$month,$day) = explode('-',$date);
+  
+  if(date('d')-$day === 0 && date('Y')-$year === 0 && date('m')-$month === 0){
     echo '<td class = "show" ><mark>'.$new.'</mark></td>';
   }else{
     echo '<td class = "hide" ></td>';
