@@ -8,12 +8,13 @@ $password = '';
 $dbname = 'hireme';
 
 $job_id = $_POST['job_id'];
+echo $job_id;
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
     
-    $stmt = $conn->query("SELECT * FROM jobs WHERE id = 1 ");
+    $stmt = $conn->query("SELECT * FROM jobs WHERE id = 3 ");//{$job_id}
 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     

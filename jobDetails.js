@@ -1,17 +1,20 @@
 // JavaScript File request and sends job details to jobDetails.html page
-window.onload = function(){
+/* global $ job_id */
+
+$(document).ready(function(){
             
         let httpRequest;
-        let job_id;
         
+        let id = job_id;
+        alert(id);
         //allows a user to apply for the particular job being displayed
         let applyJob = document.getElementById("apply-job").addEventListener("click", function(event){
             
             event.preventDefault();
-            
+
             let encodedData = "";
             let encodedDataPairs = [];
-            let data = {job_id: job_id};
+            let data = {id: id};
             let name;
             
             for(name in data) {
@@ -60,4 +63,4 @@ window.onload = function(){
                 }
             }
         }
-};
+});

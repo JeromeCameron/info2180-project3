@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $stmt->bindParam(':user_id', $user_id);
     $stmt->bindParam(':ddate', $ddate);
     
-    $job_id = $_POST['job_id'];
+    $job_id = $_POST['id'];
     $user_id = 1; //$_SESSION['user_id'];
     $ddate = date("Y-m-d");
     
