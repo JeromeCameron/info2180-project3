@@ -43,5 +43,46 @@ $(document).ready(function(){
                 //call for script that handles new user from submission
             });
 		});
-                
+         
+         $(document).on("click", '#post-job', function(event){
+            event.preventDefault(); //prevent default action of button event
+
+            $('#home_result').load("/addJob.php");
+
+		});
+		
+		$(document).on("click", '#dashboard', function(event){
+            event.preventDefault(); //prevent default action of button event
+
+            $('#home_result').load("/dashboard.php");
+
+		});
+		
+		$(document).on("click", '#dashboard', function(event){
+            event.preventDefault(); //prevent default action of button event
+
+            $('#home_result').load("/dashboard.html");
+
+		});
+		
+		$(document).on("click", '#add_user', function(event){
+            event.preventDefault(); //prevent default action of button event
+
+            $('#home_result').load("/addUser.php");
+
+		});
+		
+		$(document).on("click", '#add_job', function(event){
+            event.preventDefault(); //prevent default action of button event
+
+            $('#home_result').load("/addJob.php");
+
+		});
+		
+		$(document).on("click", '#logout', function(event){
+            event.preventDefault(); //prevent default action of button event
+
+            $('#home_result').load("/logout.php");
+
+		});
 });

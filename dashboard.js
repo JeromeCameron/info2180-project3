@@ -2,15 +2,7 @@
 /* global $ */
 
 $( document ).ready(function(){
-    
-        $("#post-job").click(function(){
-             window.open("addJob.php","iframe_a");
-        });
-        
-        $('.job').click(function() {
-            alert('Works');
-        });
-        
+
         let httpRequest;
         
         makeRequest();
