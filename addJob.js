@@ -2,11 +2,7 @@
 /* global $ */
 
 $(document).ready(function(){
-       // let button = document.getElementById("button");    
-        $('body').on("click", '#button', function(event){
-
-            event.preventDefault(); //prevent default action of button event
-            
+     
             let title = document.getElementById("jobTitle");
             let jobInfo = document.getElementById("jobInfo"); 
             let category = document.getElementById("category"); 
@@ -82,7 +78,5 @@ $(document).ready(function(){
                         return true;
                     }
                 }
-            
-        });
-        
+   
 });

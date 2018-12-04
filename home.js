@@ -2,13 +2,17 @@
 
 $(document).ready(function(){
         
+         $.getScript("/dashboard.js", function(){
+                //call for script that handles new user from submission
+            });
+        
         let httpRequest;
                 
         prepData();
       
         function prepData(){
             httpRequest = new XMLHttpRequest();
-            httpRequest.open('GET', '/addJob.php');
+            httpRequest.open('GET', '/dashboard.html');
             httpRequest.onreadystatechange = sendData;
             httpRequest.send();
         }
@@ -25,12 +29,19 @@ $(document).ready(function(){
             }
         }
         
-        
-        $.getScript("/addJob.js", function(){
-            //call for script that handles job from submission
-        });
-        
-        
-        
+        $(document).on("click", '#job_button', function(event){
+             event.preventDefault(); //prevent default action of button event
+		      $.getScript("/addJob.js", function(){
+                //call for script that handles new job from submission
+            });
+		});
+       
+       
+        $(document).on("click", '#user_button', function(event){
+            event.preventDefault(); //prevent default action of button event
+		    $.getScript("/addUser.js", function(){
+                //call for script that handles new user from submission
+            });
+		});
                 
 });

@@ -18,11 +18,7 @@ $_SESSION['token'] = $key;
          <link href="forms.css" type="text/css" rel="stylesheet"/>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<!--<script src="addJob.js" type="text/javascript"></script>-->
-		<script>
-		     $(document).on("click", '#button', function(event){
-		         alert("yes");
-		     });
-		</script>
+
     </head>
     <body>
         
@@ -48,7 +44,7 @@ $_SESSION['token'] = $key;
                 <label class = "formElements" for="location">Job Location</label><br>
                 <input class = "formElements" id="location" name = "location" type="text" placeholder = "e.g Kingston, Jamaica" required /><br>
                 
-               <input id = "button" type= "submit" name = "submit" value = "submit"><br>
+               <input id = "job_button" type= "submit" name = "submit" value = "submit"><br>
                
                <div id = "message"></div>
                 
