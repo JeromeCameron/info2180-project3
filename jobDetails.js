@@ -9,7 +9,7 @@ $(document).ready(function(){
         let encodedDataPairs = [];
         let data = {id: id};
         let name;
-        let phpToLoad = "/jobDetails.php"
+        let phpToLoad = "/jobDetails.php";
             
         for(name in data) {
                     encodedDataPairs.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));

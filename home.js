@@ -75,10 +75,10 @@ $(document).ready(function(){
 		
 			//loads logout code when clicked
 		$(document).on("click", '.job', function(event){
-            event.preventDefault(); //prevent default action of button event
+            event.preventDefault(); //prevent default action.
             $('#home_result').load("/jobDetails.html");
             job_id = ($(this).attr('id'));
-            $.getScript("/jobDetails.js", function(){
-            });
+            // $.getScript("/jobDetails.js", function(){
+            // });
 		});
 });
