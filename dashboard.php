@@ -10,9 +10,7 @@ $dbname = 'hireme';
 $new = "New";
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-
 $stmt = $conn->query("SELECT * FROM jobs");
-
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo '<h2>Available Jobs</h2>';
@@ -35,8 +33,10 @@ foreach ($results as $row) {
   
   $date = $row['date_posted'];
   list($year,$month,$day) = explode('-',$date);
+  $stmt2 = $conn->query("SELECT * FROM jobs WHERE EXISTS(SELECT * FROM jobsAppliedFor WHERE job_id = {$row['id']})");
+  $results2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
   
-  if(date('d')-$day === 0 && date('Y')-$year === 0 && date('m')-$month === 0){
+  if((date('d')-$day === 0 && date('Y')-$year === 0 && date('m')-$month === 0) || $stmt2->rowCount() === 0){
     echo '<td class = "show" ><mark>'.$new.'</mark></td>';
   }else{
     echo '<td class = "hide" ></td>';

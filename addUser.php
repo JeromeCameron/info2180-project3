@@ -24,7 +24,7 @@ $_SESSION['token'] = $key;
         <div id = "main">
              <h1>New User</h1>
         
-            <form id="userForm" action = "addUserProcess.php" method = "post">
+            <form id="userForm" action = "" method = "">
               
                 <input id = "token" type = "hidden" name = "token" value = "<?php echo $key; ?>" />
                 

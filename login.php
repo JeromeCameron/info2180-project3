@@ -14,13 +14,13 @@ $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
 //Why not use on query to pull both the password and email...Less lines
 
-$stmt2 = $conn->prepare('SELECT email FROM users WHERE  email :email');
+$stmt2 = $conn->prepare('SELECT email,password FROM users WHERE  email = :email ');
 $email = '%' . filter_input(INPUT_GET, 'email', FILTER_SANITIZE_STRING) . '%'; // <-- filter your data first (see [Data Filtering](#data_filtering)), especially important for INSERT, UPDATE, etc.
 $stmt2->bindParam(':email', $email, PDO::PARAM_STR); // <-- Automatically sanitized for SQL by PDO
 $stmt2->execute();
 //$stmt2 = $conn->query('SELECT email FROM users ');
 //$stmt = $conn->query('SELECT password FROM users ');
-$stmt = $conn->prepare('SELECT password FROM users WHERE password :password');
+$stmt = $conn->prepare('SELECT password FROM users WHERE password = :password');
 $password = '%' . filter_input(INPUT_GET, 'password', FILTER_SANITIZE_STRING) . '%'; // <-- filter your data first (see [Data Filtering](#data_filtering)), especially important for INSERT, UPDATE, etc.
 $stmt->bindParam(':password', $password, PDO::PARAM_STR); // <-- Automatically sanitized for SQL by PDO
 $stmt->execute();

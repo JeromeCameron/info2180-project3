@@ -27,7 +27,7 @@ var xhttp = new XMLHttpRequest();
             xhttp.open("POST", url, true);
             xhttp.send(null);
             
-            console.log("works 2");
+            alert("works 2");
          }
 /*function validate(){
 

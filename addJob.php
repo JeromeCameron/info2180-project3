@@ -25,7 +25,7 @@ $_SESSION['token'] = $key;
         <div id = "main">
              <h1>New Job</h1>
         
-            <form id="jobForm" action = "addJobProcess.php" method = "post">
+            <form id="jobForm" action = "" method = "">
                 
                 <input id = "token" type = "hidden" name = "token" value = "<?php echo $key; ?>" />
                 

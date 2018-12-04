@@ -2,7 +2,9 @@
 /* global $ */
 
 $(document).ready(function(){
+    
          $(document).on("click", '#user_button', function(event){
+             
             event.preventDefault();   
             let httpRequest;
             let numExp = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}/; //password regular expression
