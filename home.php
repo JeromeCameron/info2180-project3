@@ -37,7 +37,7 @@ session_start();
             </div>
             
             <div id = "box2">
-                <a class= "navLink" id"dashboard" href="dashboard.html" target="iframe_a">Home</a>
+                <a class= "navLink" id = "dashboard" href="dashboard.html" target="iframe_a">Home</a>
                 <a class= "navLink" id = "add_user" href="addUser.php" target="iframe_a">Add User</a>
                 <a class= "navLink" id = "add_job" href="addJob.php" target="iframe_a">New Job</a>
                 <a class= "navLink" id = "logout" href="logout.php" target="iframe_a">Logout</a>
@@ -45,13 +45,11 @@ session_start();
             
         </div>
         
+         <!-- Pages load here -->
         <div id = "main">
-
-            <!-- Pages load here -->
-            <iframe style="height:700px;width:800px; border:none;" name="iframe_a" id = "frame"></iframe>
-        
-        </div>
-        
-
+            <div id = "result">
+         </div></div>
+    
     </body>
+    
 </html>

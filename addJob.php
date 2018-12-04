@@ -1,21 +1,14 @@
-<?php
+?php
 
-//PHP file sets up html form for adding new jobs
+//PHP file loads html form to add new user with som validation using html
+
 session_start();
 
-// $_SESSION['userId'] = 1;
-
-// if(!isset($_SESSION['userId'])){
-//     header('Location: index.html');
-// }else{
-//     header('Location: addJob.php');
-// }
-
-// $key = hash("sha512", microtime());
-// $_SESSION['token'] = $key;
+//implemnts session key
+$key = hash("sha512", microtime());
+$_SESSION['token'] = $key;
 
 ?>
-
 
 <!DOCTYPE html>
 
@@ -60,4 +53,3 @@ session_start();
     </body>
     
 </html>
-

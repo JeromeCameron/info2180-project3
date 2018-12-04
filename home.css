@@ -19,7 +19,7 @@ a:link, a:visited{
 
 .container{
     display:grid;
-    grid-template-columns: repeat(6,250px);
+    grid-template-columns: repeat(5,250px);
     grid-auto-rows: repeat(8,300px);
     grid-column-gap: 10px;
     /*margin: auto;*/
@@ -56,14 +56,9 @@ a:link, a:visited{
     padding-left: 5px;
 }
 
-iframe{ 
-    outline: none;
-    width: 300px;
-    height: 400px;
-}
-
-iframe[seamless] { 
-    display: block;
+#result{ 
+    width: 1000px;
+    height: 600px;
 }
 
 img{
@@ -71,8 +66,3 @@ img{
     width: 30px;
 }
 
-#frame{
-    width: 900px;
-    height: 700px;
-    display: block;
-}
