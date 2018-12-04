@@ -1,4 +1,4 @@
-?php
+<?php
 
 //PHP file loads html form to add new user with som validation using html
 

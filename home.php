@@ -15,9 +15,9 @@ session_start();
 <html>
     <head>
         <title>Dashboard</title>
-        <link href="index.css" type="text/css" rel="stylesheet"/>
+        <link href="home.css" type="text/css" rel="stylesheet"/>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-		<script src="index.js" type="text/javascript"></script>
+		<script src="home.js" type="text/javascript"></script>
 	
     </head>
     
@@ -30,10 +30,10 @@ session_start();
         <div id="navigation">
             
             <div id = "box1">
-                <img src="Images/home.png"></img>
-                <img src="Images/addUser.png"></img>
-                <img src="Images/addJob.png"></img>
-                <img src="Images/logout.png"></img>
+                <img class = "icons" src="Images/home.png"></img>
+                <img class = "icons" src="Images/addUser.png"></img>
+                <img class = "icons" src="Images/addJob.png"></img>
+                <img class = "icons" src="Images/logout.png"></img>
             </div>
             
             <div id = "box2">
@@ -46,8 +46,8 @@ session_start();
         </div>
         
          <!-- Pages load here -->
-        <div id = "main">
-            <div id = "result">
+        <div id = "home_main">
+            <div id = "home_result">
          </div></div>
     
     </body>
