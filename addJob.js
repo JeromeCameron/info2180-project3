@@ -2,11 +2,9 @@
 /* global $ */
 
 $(document).ready(function(){
-            
-        let httpRequest;
-        
-        let button = document.getElementById("button").addEventListener("click", function(event){
-            
+       // let button = document.getElementById("button");    
+        $('body').on("click", '#button', function(event){
+
             event.preventDefault(); //prevent default action of button event
             
             let title = document.getElementById("jobTitle");
@@ -37,7 +35,9 @@ $(document).ready(function(){
             if(testData()){
                 
                 data = {title: title.value, jobInfo: jobInfo.value, category: category.value, company: company.value, location: location.value, token: token};
-            
+                
+                let httpRequest;
+                
                 prepData();
               
                 

@@ -1,7 +1,7 @@
 /* global $ */
 
-window.onload = function(){
-            
+$(document).ready(function(){
+        
         let httpRequest;
                 
         prepData();
@@ -24,5 +24,13 @@ window.onload = function(){
                 }
             }
         }
+        
+        
+        $.getScript("/addJob.js", function(){
+            //call for script that handles job from submission
+        });
+        
+        
+        
                 
-};
+});

@@ -43,7 +43,7 @@ $_SESSION['token'] = $key;
                 <label class = "formElements" for="telephone">Telephone</label><br>
                 <input class = "formElements" id="telephone" name = "telephone" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" placeholder = "eg: 876-555-7777" required /><br>
                 
-                <input id = "button" type= "submit" name = "submit" value = "submit"> </input>
+                <input id = "user_button" type= "submit" name = "submit" value = "submit"> </input>
                 
                 <div id = "message"></div>
                 

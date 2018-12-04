@@ -17,7 +17,12 @@ $_SESSION['token'] = $key;
         <title>Add Job</title>
          <link href="forms.css" type="text/css" rel="stylesheet"/>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-		<script src="addJob.js" type="text/javascript"></script>
+		<!--<script src="addJob.js" type="text/javascript"></script>-->
+		<script>
+		     $(document).on("click", '#button', function(event){
+		         alert("yes");
+		     });
+		</script>
     </head>
     <body>
         
