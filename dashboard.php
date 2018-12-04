@@ -7,6 +7,7 @@ $host = getenv('IP');
 $username = getenv('C9_USER');
 $password = '';
 $dbname = 'hireme';
+$new = "New";
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
@@ -15,23 +16,31 @@ $stmt = $conn->query("SELECT * FROM jobs");
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo '<h2>Available Jobs</h2>';
-echo '<table>';
+echo '<table id = "AvailableJobs">';
 
 echo '<tr>';
 echo '<th>'. "Company" . '</th>';
 echo '<th>'. "Job Title" . '</th>';
 echo '<th>'. "Category" . '</th>';
 echo '<th>'. "Date" . '</th>';
-echo '<th class = "hide">'. "ID" . '</th>';
+echo '<th></th>';
 echo '</tr>';
 
 foreach ($results as $row) {
   echo '<tr>';
   echo '<td>' . $row['company_name'] . '</td>';
-  echo '<td>' . '<a class = "job" href = "jobDetails.html" target="iframe_a" id =' . $row['id'] . '>' . $row['job_title'] . '</a>' . '</td>';
+  echo '<td>' . '<a class = "job" href = "" id =' . $row['id'] . '>' . $row['job_title'] . '</a>' . '</td>';
   echo '<td>' . $row['category'] . '</td>';
   echo '<td>' . $row['date_posted'] . '</td>';
-  echo '<td class = "hide">' . $row['id'] . '</td>';
+  
+  //$diff = date_diff(date("Y-m-d"), $row['date_posted']);
+  //echo $diff->format("%R%a days");
+  if((date("Y-m-d")-$row['date_posted']) === 0){
+    echo '<td class = "show" ><mark>'.$new.'</mark></td>';
+  }else{
+    echo '<td class = "hide" ></td>';
+  }
+  
   echo '</tr>';
 }
 
@@ -51,7 +60,7 @@ echo '<th>'. "Company" . '</th>';
 echo '<th>'. "Job Title" . '</th>';
 echo '<th>'. "Category" . '</th>';
 echo '<th>'. "Date" . '</th>';
-echo '<th class = "hide">'. "ID" . '</th>';
+echo '<th></th>';
 echo '</tr>';
 
 foreach ($results as $row) {
@@ -60,7 +69,7 @@ foreach ($results as $row) {
   echo '<td>' . '<a class = "job" href = "jobDetails.html" target="iframe_a" id =' . $row['id'] . '>' . $row['job_title'] . '</a>' . '</td>';
   echo '<td>' . $row['category'] . '</td>';
   echo '<td>' . $row['date_applied'] . '</td>';
-  echo '<td class = "hide">' . $row['id'] . '</td>';
+  echo '<td></td>';
   echo '</tr>';
 }
 

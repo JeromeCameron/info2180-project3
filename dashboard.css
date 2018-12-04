@@ -66,10 +66,18 @@ a:link, a:visited{
     color: blue;
 }
 
-td:nth-of-type(5){
-    display: none;
+td:nth-of-type(5), td:nth-of-type(4){
+    width: 10px;
+    text-align: left;
 }
 
-th + th + th + th + th{
+th + th + th + th + th, th + th + th + th {
+    width: 10px;
+}
+
+.hide{
     display: none;
 }
+/*.show{*/
+/*    background-color: yellow;*/
+/*}*/
