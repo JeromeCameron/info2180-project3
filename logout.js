@@ -1,5 +1,5 @@
 // JavaScript File
-/*global $*/
+/*global $*//*
 $(document).ready(function(){
     
     $("logout").click(function(){
@@ -7,4 +7,4 @@ $(document).ready(function(){
         alert("Successfully logged out");
     });
 });
-});
+});*/

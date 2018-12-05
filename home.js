@@ -37,11 +37,11 @@ $(document).ready(function(){
 		});
        
         //call for script that handles new user from submission
-        $(document).on("click", '#user_button', function(event){
-            event.preventDefault(); //prevent default action of button event
-		    $.getScript("/addUser.js", function(){
-            });
-		});
+//         $(document).on("click", '#user_button', function(event){
+//             event.preventDefault(); //prevent default action of button event
+// 		    $.getScript("/addUser.js", function(){
+//             });
+// 		});
          
          //loads new job from when clicked from post job button
          $(document).on("click", '#post-job', function(event){
@@ -70,6 +70,7 @@ $(document).ready(function(){
 		//loads logout code when clicked
 		$(document).on("click", '#logout', function(event){
             event.preventDefault(); //prevent default action of button event
+            $('#navigation').hide();
             $('#home_result').load("/logout.php");
 		});
 		

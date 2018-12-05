@@ -1,6 +1,6 @@
 // JavaScript File
 /*global $*/
-/*window.onload = function(){
+window.onload = function(){
 
 $('#loginArea').submit(function(e) {
     e.preventDefault();
@@ -27,22 +27,8 @@ $('#loginArea').submit(function(e) {
                 username: username,
                 password: password
             },
-            success: function(data) {
-                console.log(data);
-                // It looks like the page that handles the form returns JSON
-                // Parse the JSON
-                var obj = JSON.parse(data);
-
-                if(obj.result != 'invalid') {
-                    alert("Login succeeded");
-                    // You should redirect the user too
-                    window.location.href = 'dashboard.html';
-                }else{
-                    alert("Login failed");
-                    window.location.href = 'index.html'
-                }                    
-            }
+            
         });
     } 
 }); 
-}*/
+}

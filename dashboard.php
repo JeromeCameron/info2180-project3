@@ -54,7 +54,7 @@ echo'</table>';
 
 //Code for jobs a particular user applied for. Need to set up sessions to pull user ID for where clause
 
-$stmt = $conn->query("SELECT jobs.id, company_name, job_title, category, date_applied FROM jobs JOIN jobsAppliedFor ON jobs.id = jobsAppliedFor.job_id where jobsAppliedFor.user_id = 1"); //$_SESSION['user_id']
+$stmt = $conn->query("SELECT jobs.id, company_name, job_title, category, date_applied FROM jobs JOIN jobsAppliedFor ON jobs.id = jobsAppliedFor.job_id where jobsAppliedFor.user_id =1"); //$_SESSION['UserID']
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
