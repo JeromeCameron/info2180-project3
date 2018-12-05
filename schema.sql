@@ -36,7 +36,7 @@ CREATE TABLE jobsAppliedFor(
     FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
-INSERT INTO users(firstname,lastname,password,telephone,email,date_joined) VALUES("Gregory","Anderson","password123","1888-998-5555","admin@hireme.com","2018-2-1");
+INSERT INTO users(firstname,lastname,password,telephone,email,date_joined) VALUES("Gregory","Anderson","$2y$10$K4NbVVFv2XcACgi9xvyE1e.ejdMjjFg9R5jE7YD/pbexvvPSbvu0K","1888-998-5555","admin@hireme.com","2018-2-1");
 INSERT INTO users(firstname,lastname,password,telephone,email,date_joined) VALUES("Kirsten","Kellman","pass1","1888-998-5555","kirsten@gmail.com","2018-11-20");
 INSERT INTO users(firstname,lastname,password,telephone,email,date_joined) VALUES("Damian","Ross","pass2","1888-998-5555","damian@gmail.com","2018-11-1");
 INSERT INTO users(firstname,lastname,password,telephone,email,date_joined) VALUES("Jerome","cameron","pass3","1888-998-5555","jerome@gmail.com","2018-11-22");

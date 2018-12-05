@@ -12,7 +12,7 @@ $(document).ready(function(){
       
         function prepData(){
             httpRequest = new XMLHttpRequest();
-            httpRequest.open('GET', '/dashboard.html');
+            httpRequest.open('POST', '/dashboard.html');
             httpRequest.onreadystatechange = sendData;
             httpRequest.send();
         }
@@ -36,12 +36,12 @@ $(document).ready(function(){
             });
 		});
        
-//         //call for script that handles new user from submission
-//         $(document).on("click", '#user_button', function(event){
-//             event.preventDefault(); //prevent default action of button event
-// 		    $.getScript("/addUser.js", function(){
-//             });
-// 		});
+        //call for script that handles new user from submission
+        $(document).on("click", '#user_button', function(event){
+            event.preventDefault(); //prevent default action of button event
+		    $.getScript("/addUser.js", function(){
+            });
+		});
          
          //loads new job from when clicked from post job button
          $(document).on("click", '#post-job', function(event){

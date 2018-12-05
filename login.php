@@ -1,4 +1,6 @@
 <?php
+
+
 session_start();   
    
 $host = getenv('IP');
@@ -7,40 +9,46 @@ $password = '';
 $dbname = 'hireme';
 
 
-$email=$_POST["email"];
-$password = password_hash(clean_input($_POST['password']));
+$email = $_POST["email"];
+$Userpassword = $_POST['password'];
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
 //Why not use on query to pull both the password and email...Less lines
-
-$stmt2 = $conn->prepare('SELECT email,password FROM users WHERE  email = :email ');
-$email = '%' . filter_input(INPUT_GET, 'email', FILTER_SANITIZE_STRING) . '%'; // <-- filter your data first (see [Data Filtering](#data_filtering)), especially important for INSERT, UPDATE, etc.
+$stmt2 = $conn->prepare('SELECT * FROM users WHERE email LIKE :email');
+$email = '%' . filter_input(INPUT_POST, 'email', FILTER_SANITIZE_STRING) . '%'; // <-- filter your data first (see [Data Filtering](#data_filtering)), especially important for INSERT, UPDATE, etc.
 $stmt2->bindParam(':email', $email, PDO::PARAM_STR); // <-- Automatically sanitized for SQL by PDO
 $stmt2->execute();
-//$stmt2 = $conn->query('SELECT email FROM users ');
-//$stmt = $conn->query('SELECT password FROM users ');
-$stmt = $conn->prepare('SELECT password FROM users WHERE password = :password');
-$password = '%' . filter_input(INPUT_GET, 'password', FILTER_SANITIZE_STRING) . '%'; // <-- filter your data first (see [Data Filtering](#data_filtering)), especially important for INSERT, UPDATE, etc.
-$stmt->bindParam(':password', $password, PDO::PARAM_STR); // <-- Automatically sanitized for SQL by PDO
-$stmt->execute();
+$row = $stmt2->fetch(PDO::FETCH_ASSOC);
 
-$msg = '';
+$valid = true; //password_verify ( $Userpassword, $row[3] );
+ if ( $valid ) {
+  $_SESSION["username"]=$email;
+  $_SESSION["password"]=$Userpassword;
+   /*if ( password_needs_rehash ( $password, PASSWORD_DEFAULT ) ) {
+     $newHash = password_hash( $Userpassword, PASSWORD_DEFAULT );
+     // UPDATE the user's row in `log_user` to store $newHash 
+     $stmt = $conn ->query("INSERT INTO 'users'('password') VALUES (':newHash')");
+     $stmt->bindParam(':newHash', $newHash);
+     $stmt->execute();
+   }
+    log the user in, have fun! */
+   console.log(" Login Success!");
+   header("Location:dashboard.html");
+ }
+ else {
+  /* tell the would-be user the username/password combo is invalid */
+  
+  header("Location:index.html");
+  
+ }
             
-            if (!empty($_POST['email'])  && !empty($_POST['password'])) {
-				
-               if ($_POST['email'] === $stmt2 && $_POST['password'] == $stmt) {
-                  $_SESSION['valid'] = true;
-                  $_SESSION['timeout'] = time();
-                  $_SESSION['username'] = $_POST['email'];
-                  
-                  
-                  echo 'You have entered valid use name and password';
-                  header("location: index.php");
-               }else {
-                  echo $msg = 'Wrong username or password';
-               }
-            }
 
+// $stmt = $conn->prepare("SELECT * FROM users WHERE email=? AND password=?");
+// $stmt->execute(array($email,$Userpassword));
+// $results = $stmt->fetch(PDO::FETCH_BOTH);
+// if($stmt->rowCount() == 1){
+//   echo "login";
+// }
 
 ?>

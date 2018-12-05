@@ -4,7 +4,7 @@
         <title>Login</title>
         <link href="login.css" type="text/css" rel="stylesheet"/>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-		<script src="login.js" type="text/javascript"></script>
+		<!--<script src="login.js" type="text/javascript"></script>-->
     </head>
     
     <body id = "main">
@@ -15,7 +15,7 @@
             
             <div id = "loginArea">
             
-                <form id="loginForm" >
+                <form id="loginForm" action = "login.php" method = "post" >
                     <label class = "formElements" for="email">Email</label><br>
                     <input class = "formElements" id="email" name = "email" type="email" placeholder = "eg: name@mail.com" required /><br>
                     
